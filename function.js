@@ -7,28 +7,26 @@ function send() {
         var name = document.getElementById("name").value;
         var experience = document.getElementById("Experience").value;
         var work = document.getElementById("work").value;
-        var language = " ";
 
-        if (name && experience && work) {
+        if (name && experience && work != null) {
             if (document.getElementById("male").checked) {
-                document.getElementById("male").value;
-            } else if (document.getElementById("female").checked) {
-                document.getElementById("female").value;
+                
+            }
+            else if (document.getElementById("female").checked) {
             }
 
             if (document.getElementById("php").checked) {
-                language = language + " " + document.getElementById("php").value;
+                
             }
-            if (document.getElementById("python").checked) {
-                language = language + " " + document.getElementById("python").value;
+            else if (document.getElementById("python").checked) {
+                
             }
-            if (document.getElementById("dotnet").checked) {
-                language = language + " " + document.getElementById("dotnet").value;
+            else if (document.getElementById("dotnet").checked) {
+                
             }
-            if (document.getElementById("java").checked) {
-                language = language + " " + document.getElementById("java").value;
+            else if (document.getElementById("java").checked) {
+                
             }
-
             alert("Send Successful");
         }
         else {
