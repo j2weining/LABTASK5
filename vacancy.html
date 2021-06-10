@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,37 +9,15 @@
     <link href="jquery.mobile-1.4.5.min.css" rel="stylesheet">
     <script src="jquery-1.11.1.min.js"></script>
     <script src="jquery.mobile-1.4.5.min.js"></script>
-    <script>
-        function reset(){
-            location.reload();
-        }
-        function send(){
-            let selection1 = confirm('Do you want to send?');
-            if (selection1 == true) {
-                var name = document.getElementById('name').value
-                var experience = document.getElementById('Experience').value
-                var work = document.getElementById('work').value
-                var language = document.getElementById('language').value
-                if (name && Experience && work && language != ""){
-                alert("Send Successful.")
-            }else{
-                alert("Please fill in all fields !");
-                location.reload();
-                }
-            } else {
-            alert('Sorry, Please try again.');
-            }
-
-        }
-    </script>
 </head>
+
 <body>
-    <div data-role="page" id="utama">
+    <div data-role="page" id="main">
 
         <div data-role="header">
-          <h1>JOB VACANCY</h1>
+            <h1>JOB VACANCY</h1>
         </div><!-- /header -->
-      
+
         <div data-role="main" class="ui-content">
             <h1>Web Designer</h1>
             <ol data-role="listview">
@@ -48,47 +27,60 @@
                 <li>Salary: RM2K - 4K</li>
             </ol>
         </div><!-- /content -->
-      
-        <div data-role="footer">
-            <a href="#appForm" class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-btn-icon-right ui-icon-action">Apply</a>
-        </div><!-- /footer -->
-      </div><!-- /page -->
 
-      <div data-role="page" id="appForm">
+        <div data-role="footer">
+            <a href="#appForm"
+                class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-btn-icon-right ui-icon-action">Apply</a>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+    <div data-role="page" id="appForm">
 
         <div data-role="header">
-          <h1>APPLICATION FORM</h1>
+            <h1>APPLICATION FORM</h1>
         </div><!-- /header -->
-      
+
         <div data-role="main" class="ui-content">
-          <form >
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Full Name" required/>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Full Name" required />
 
-            <label for="Experience">Working experience (years)</label>
-            <input type="range" name="Experience" id="Experience" min="0" max="15" value="1">
+                <fieldset data-role="controlgroup" data-type="horizontal" id="gender">
+                     <legend>Gender</legend>
+                    <input type="radio" id="male" value="Male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" value="Female">
+                    <label for="female">Female</label>
+                </fieldset>
 
-            <label for="work">Willing to work outside</label>
-            <input type="checkbox" data-role="flipswitch" name="work" id="work" data-on-text="No" data-off-text="Yes" data-wrapper-class="custom-size-flipswitch">
-            
-             <fieldset data-role="controlgroup" id="language">
-                <legend>Programming Language</legend>
-                <input type="checkbox" name="php" id="php">
-                <label for="php">PHP</label>
-                <input type="checkbox" name="python" id="python">
-                <label for="python">Python</label>
-                <input type="checkbox" name=".net" id=".net">
-                <label for=".net">.NET</label>
-                <input type="checkbox" name="java" id="java">
-                <label for="java">Java</label>
-            </fieldset>
-          </form>
+                <label for="Experience">Working experience(years)</label>
+                     <input type="range" id="Experience" min="0" max="15" value="1">
+
+
+                <label for="work">Willing to work outside</label>
+                <input type="checkbox" data-role="flipswitch" name="work" id="work" data-on-text="No"
+                    data-off-text="Yes" data-wrapper-class="custom-size-flipswitch" required>
+
+                 <fieldset data-role="controlgroup" id="language">
+                    <legend>Programming Language</legend>
+                    <input type="checkbox" name="php" id="php">
+                    <label for="php">PHP</label>
+                    <input type="checkbox" name="python" id="python">
+                    <label for="python">Python</label>
+                    <input type="checkbox" name="dotnet" id="dotnet">
+                    <label for=".net">.NET</label>
+                    <input type="checkbox" name="java" id="java">
+                    <label for="java">Java</label>
+                </fieldset>
+            </form>
         </div><!-- /content -->
-      
+
         <div data-role="footer">
             <button type="submit" onclick="send()">Send</button>
             <button type="reset" onclick="reset()">Reset</button>
         </div><!-- /footer -->
-      </div><!-- /page -->
+    </div><!-- /page -->
+    <script src="function.js"></script>
 </body>
+
 </html>
